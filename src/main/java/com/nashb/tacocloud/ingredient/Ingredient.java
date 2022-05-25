@@ -1,12 +1,23 @@
 package com.nashb.tacocloud.ingredient;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
 public class Ingredient {
-    private final String id;
-    private final String name;
-    private final Type type;
+
+    @Id
+    private String id;
+    private String name;
+    private Type type;
 
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE

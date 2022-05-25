@@ -3,8 +3,7 @@ package com.nashb.tacocloud.tacoorder;
 import com.nashb.tacocloud.taco.Taco;
 import lombok.Data;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,12 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@Table
+@Entity
 public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank(message = "Delivery name is required")
@@ -44,6 +44,7 @@ public class TacoOrder implements Serializable {
     @NotBlank(message = "CVV is required")
     private String ccCVV;
 
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {

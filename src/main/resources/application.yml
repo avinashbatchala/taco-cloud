@@ -1,0 +1,10 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: tacocloud
+      schema-action: recreate
+      contact-points: 127.0.0.1
+      port: 9042
+      username: tacocloud
+      password: s3cr3tP455w0rd
+      local-datacenter: datacenter1

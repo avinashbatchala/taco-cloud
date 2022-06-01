@@ -50,7 +50,7 @@ create table if not exists Taco
     taco_order_key bigint not null,
     created_at timestamp not null
     );
-create table if not exists Ingredient_Ref
+create table if not exists ingredient_Ref
 (
     ingredient varchar
 (
@@ -59,7 +59,7 @@ create table if not exists Ingredient_Ref
     taco bigint not null,
     taco_key bigint not null
     );
-create table if not exists Ingredient
+create table if not exists ingredient
 (
     id varchar
 (

@@ -1,9 +1,0 @@
-spring:
-  datasource:
-    generate-unique-name: false
-    name: tacocloud
-    generate-ddl: true
-    h2:
-  sql:
-    init:
-      mode: always
